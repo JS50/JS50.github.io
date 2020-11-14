@@ -14,23 +14,38 @@
     <div class="options">
         <label for="lastName">Name</label>
         <input name="lastName" id="lastName" type="text" value="Heinsch">
-        <label>Breite</label>
-        <div class="row">
-            <button id="widenName">+</button>
-            <button id="narrowName">-</button>
-        </div>
+        <label for="changeNameWidth">Breite des Namens</label>
+        <input type="range" id="changeNameWidth" min="0" max="2" value="1" step=".1">
 
-        <label>Größe</label>
-        <div class="row">
-            <button id="fontSizeUp">+</button>
-            <button id="fontSizeDown">-</button>
-        </div>
+        <label for="changeNameSize">Schriftgröße Name</label>
+        <input type="range" id="changeNameSize" min="20" max="64" value="32" step="2">
 
-        <label for="nameFill">Farbe</label>
-        <input type="color" id="nameFill">
+        <label for="changeNameStrokeWidth">Größe der Umrandung des Namens</label>
+        <input type="range" id="changeNameStrokeWidth" min="0" max="2" value=".9" step=".1">
 
-        <label for="strokeFill">Outline</label>
-        <input type="color" id="strokeFill">
+        <label for="nameFill">Farbe des Namens</label>
+        <input type="color" id="nameFill" value="#ffffff">
+
+        <label for="nameStrokeFill">Outlinefarbe des Namens</label>
+        <input type="color" id="nameStrokeFill" value="#ff1318">
+
+        <label for="number">Nummer</label>
+        <input name="lastName" id="number" type="text" value="711">
+
+        <label for="changeNumberWidth">Breite der Nummer</label>
+        <input type="range" id="changeNumberWidth" min="0" max="2" value="1" step=".1">
+
+        <label for="changeNumberSize">Schriftgröße Nummer</label>
+        <input type="range" id="changeNumberSize" min="20" max="64" value="32" step="2">
+
+        <label for="changeNumberStrokeWidth">Größe der Umrandung der Nummer</label>
+        <input type="range" id="changeNumberStrokeWidth" min="0" max="2" value=".9" step=".1">
+
+        <label for="numberFill">Farbe der Nummer</label>
+        <input type="color" id="numberFill" value="#ffffff">
+
+        <label for="numberStrokeFill">Outlinefarbe der Nummer</label>
+        <input type="color" id="numberStrokeFill" value="#ff1318">
     </div>
     <script src="frills.js"></script>
 </body>

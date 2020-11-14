@@ -14,7 +14,7 @@ const initialize = () => {
     window.jerseyName = new fabric.Text("Heinsch", {
         fill: '#ffffff',
         stroke: '#ff1318',
-        strokeWidth: .5,
+        strokeWidth: 1,
         fontSize: 32,
         angle: 5,
         fontFamily: 'Impact'
@@ -22,10 +22,23 @@ const initialize = () => {
 
     jerseyName.customCenter = {x: 486, y: 200};
 
+    window.jerseyNumber = new fabric.Text("711", {
+        fill: '#ffffff',
+        stroke: '#ff1318',
+        strokeWidth: 1,
+        fontSize: 80,
+        angle: 5,
+        fontFamily: 'Impact'
+    });
+
+    jerseyNumber.customCenter = {x: 480, y: 263};
+
     positionElement(jerseyName);
+    positionElement(jerseyNumber);
 
     canvas.setZoom(1);
     canvas.add(jerseyName);
+    canvas.add(jerseyNumber);
 
     canvas.on('mouse:down', function(options) {
         console.log(options.e.clientX, options.e.clientY);
@@ -38,14 +51,18 @@ const initialize = () => {
     }
 
     document.getElementById('lastName').addEventListener('input', e => changeText(e, jerseyName));
-    document.getElementById('widenName').addEventListener('click', () => changeWidth(.1, jerseyName));
-    document.getElementById('narrowName').addEventListener('click', () => changeWidth(-.1, jerseyName));
+    document.getElementById('changeNameWidth').addEventListener('input', (e) => changeWidth(e.target.value, jerseyName));
+    document.getElementById('changeNameSize').addEventListener('input', (e) => changeFontSize(e.target.value, jerseyName));
+    document.getElementById('changeNameStrokeWidth').addEventListener('input', (e) => changeStroke1Width(e.target.value, jerseyName));
+    document.getElementById('nameFill').addEventListener('input', (e) => changeFill(e, jerseyName));
+    document.getElementById('nameStrokeFill').addEventListener('input', (e) => changeStroke1Color(e, jerseyName));
 
-    document.getElementById('fontSizeUp').addEventListener('click', () => changeFontSize(2, jerseyName));
-    document.getElementById('fontSizeDown').addEventListener('click', () => changeFontSize(-2, jerseyName));
-
-    document.getElementById('nameFill').addEventListener('change', (e) => changeFill(e, jerseyName));
-    document.getElementById('strokeFill').addEventListener('change', (e) => changeStroke(e, jerseyName));
+    document.getElementById('number').addEventListener('input', e => changeText(e, jerseyNumber));
+    document.getElementById('changeNumberWidth').addEventListener('input', (e) => changeWidth(e.target.value, jerseyNumber));
+    document.getElementById('changeNumberSize').addEventListener('input', (e) => changeFontSize(e.target.value, jerseyNumber));
+    document.getElementById('changeNumberStrokeWidth').addEventListener('input', (e) => changeStroke1Width(e.target.value, jerseyNumber));
+    document.getElementById('numberFill').addEventListener('input', (e) => changeFill(e, jerseyNumber));
+    document.getElementById('numberStrokeFill').addEventListener('input', (e) => changeStroke1Color(e, jerseyNumber));
 
 };
 
@@ -83,12 +100,12 @@ const changeText = (e, element) => {
 }
 
 const changeWidth = (val, element) => {
-    element.setScaleX(jerseyName.scaleX + val);
+    element.setScaleX(val);
     positionElement(element);
 }
 
 const changeFontSize = (val, element) => {
-    element.setFontSize(jerseyName.fontSize + val);
+    element.setFontSize(val);
     positionElement(element);
 }
 
@@ -97,8 +114,14 @@ const changeFill = (e, element) => {
     positionElement(element);
 }
 
-const changeStroke = (e, element) => {
+const changeStroke1Color = (e, element) => {
     element.setStroke(e.target.value);
+    positionElement(element);
+}
+
+const changeStroke1Width = (val, element) => {
+    console.log(val);
+    element.setStrokeWidth(val);
     positionElement(element);
 }
 
