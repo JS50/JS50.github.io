@@ -59,10 +59,18 @@ const initLights = () => {
 
 const loadHelmet = () => {
     //LoadingManagaer is needed so a half loaded helmet won't be displayed
-    const loadingManager = new THREE.LoadingManager( function () {
-        scene.add(helmet);
-    }, (url, itemsLoaded, itemsTotal) => console.log('Loaded objects: ' + itemsTotal + '/' + itemsLoaded));
-
+    const loadingManager = new THREE.LoadingManager(
+() => {
+            let loadingScreen = document.getElementById('loading');
+            loadingScreen.style.opacity = '0';
+            loadingScreen.style.zIndex = '-100';
+            scene.add(helmet);
+        },
+(url, itemsTotal, itemsLoaded) => {
+        document
+            .getElementById('loadingBarInner')
+            .setAttribute('style', 'width: ' + (itemsTotal / itemsLoaded * 100) + '%');
+    });
     return loadHelmetMTL(loadingManager);
 }
 
