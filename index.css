@@ -1,3 +1,47 @@
+@font-face { font-family: 'Bully';
+    src: url('fonts/Bully.otf') format('opentype');
+}
+
+@font-face { font-family: 'Chinese Rocks';
+    src: url('fonts/Chinese Rocks.ttf') format('truetype');
+}
+
+@font-face { font-family: 'Compacta BT';
+    src: url('fonts/Compacta BT Bold.ttf') format('truetype');
+}
+
+@font-face { font-family: 'DonGraffiti';
+    src: url('fonts/DonGraffiti.otf') format('opentype');
+}
+
+@font-face { font-family: 'Gunplay';
+    src: url('fonts/Gunplay.ttf') format('truetype');
+}
+
+@font-face { font-family: 'NightAOE';
+    src: url('fonts/NightAOE.ttf') format('truetype');
+}
+
+@font-face { font-family: 'Prisma';
+    src: url('fonts/Prisma.ttf') format('truetype');
+}
+
+@font-face { font-family: 'Syemox';
+    src: url('fonts/Syemox.ttf') format('truetype');
+}
+
+@font-face { font-family: 'Transformers';
+    src: url('fonts/Transformers Movie.ttf') format('truetype');
+}
+
+@font-face { font-family: 'Vipnagorgialla';
+    src: url('fonts/Vipnagorgialla Bold.otf') format('opentype');
+}
+
+@font-face { font-family: 'Walkway';
+    src: url('fonts/Walkway Bold.ttf') format('truetype');
+}
+
 body {
     height: 100vh;
     width: 100vw;
