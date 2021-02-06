@@ -31,7 +31,7 @@ const initialize = () => {
         mtr: false
     });
 
-    window.jerseyNumber = new fabric.Textbox("711", {
+    window.jerseyNumber = new fabric.IText("711", {
         fill: '#ffffff',
         stroke: '#ff1318',
         strokeWidth: 4,
